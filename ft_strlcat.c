@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 13:41:28 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/12 15:43:18 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:04:49 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *src, char *dst, size_t lendest)
 	size_t	h;
 	size_t	i;
 
-	h = ft_strlen(dest);
+	h = ft_strlen(dst);
 	if (lendest <= ft_strlen(dst))
 		return (lendest + ft_strlen(src));
 	i = 0;

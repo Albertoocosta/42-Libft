@@ -6,14 +6,14 @@
 #    By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 18:12:24 by cda-fons          #+#    #+#              #
-#    Updated: 2024/04/15 18:58:31 by cda-fons         ###   ########.fr        #
+#    Updated: 2024/04/16 13:06:52 by cda-fons         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 SRCS = $(wildcard *.c)
-OBJS = $(SRCS: .c=.0)
+OBJS = $(SRCS:.c=.o)
 BINARY = libft.a
 DEPS = libft.h
 

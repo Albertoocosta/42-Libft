@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:50:12 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/11 16:19:10 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:06:02 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(char *str, int c)
 	size_t	l;
 
 	l = (ft_strlen(str)) - 1;
-	while (l >= 0)
+	while (l > 0)
 	{
 		if (c == str[l])
 			return ((char *)str);

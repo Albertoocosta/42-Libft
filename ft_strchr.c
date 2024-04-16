@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:01:30 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/11 11:05:20 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:03:32 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchar(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
 
+
 	i = 0;
-	if (str[i] != 0 && c != str)
+	if (str[i] != 0 && c != str[i])
 		i++;
 	if (c == str[i])
-		return ((char *)s);
+		return ((char *)&str[i]);
 	return (0);
 }

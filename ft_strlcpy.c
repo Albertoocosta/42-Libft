@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:32:26 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/12 13:41:17 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:05:22 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *src, char *dst, size_t lendst)
 	i = 0;
 	if (lendst != 0)
 	{
-		while (src[i] != 0 && i < (lendest - 1))
+		while (src[i] != 0 && i < (lendst - 1))
 		{
 			dst[i] = src[i];
 			i++;

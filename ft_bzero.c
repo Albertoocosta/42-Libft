@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:34:35 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/12 17:54:22 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:42:39 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	unsigned char	*ps;
+	size_t		i;
 
 	i = 0;
+	ps = s;
 	while (i < n)
 	{
-		s[i] = '\0';
+		ps[i] = '\0';
 		i++;
 	}
 }

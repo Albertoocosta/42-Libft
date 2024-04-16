@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:57:15 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/12 19:36:42 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:55:52 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *to, const void *from, size_t n)
 	if (to < from)
 	{
 		i = n - 1;
-		while (i >= 0)
+		while (i > 0)
 		{
 			((unsigned char *)to)[i] = ((unsigned char *)from)[i];
 			i--;
