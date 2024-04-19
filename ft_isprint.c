@@ -6,13 +6,13 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:58:58 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 13:38:11 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:03:13 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

@@ -6,13 +6,13 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:57:23 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 13:37:17 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:12:51 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
