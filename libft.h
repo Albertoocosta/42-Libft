@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct	s_list
+{
+	void		*context;
+	struct s_list	*next;
+}		t_list;
 size_t	ft_strlen(char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strchr(const char *str, int c);
