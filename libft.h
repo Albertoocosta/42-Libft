@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:07:10 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/19 19:12:29 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:31:50 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void		*context;
-	struct s_list	*next;
+	void				*context;
+	struct s_list		*next;
 }		t_list;
 size_t	ft_strlen(char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
