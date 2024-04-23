@@ -6,13 +6,13 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:07:29 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/11 14:16:35 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:00:33 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 

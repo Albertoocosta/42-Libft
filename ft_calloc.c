@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 13:34:53 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 17:15:01 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:46:04 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 
 	if (size == 0 || size == 0)
-		return (NULL);
+		return (0);
 	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (0);
 	i = 0;
 	while (i < nmemb)
 	{

@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:07:10 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/22 15:31:50 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:45:23 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ typedef struct s_list
 	void				*context;
 	struct s_list		*next;
 }		t_list;
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strchr(const char *str, int c);
 void	ft_putchar_fd(char c, int fd);
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
@@ -47,8 +47,8 @@ char	**ft_split(char	*str, char c);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *src, char *dst, size_t lendest);
-size_t	ft_strlcpy(char *src, char *dst, size_t lendst);
+size_t	ft_strlcat(char *dst, const char *src, size_t lendest);
+size_t	ft_strlcpy(char *dst, const char *src, size_t lendst);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*ft_strnstr(char *str, char *to_find, size_t len);

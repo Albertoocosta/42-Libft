@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:53:20 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/19 16:57:34 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:18:59 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (s == 0)
 		return ;
-	while (s)
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;

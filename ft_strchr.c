@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:01:30 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 17:11:10 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:49:11 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ char	*ft_strchr(const char *str, int c)
 	int	i;
 
 	i = 0;
-	if (str[i] != 0 && c != str[i])
+	while (str[i])
+	{
+		if (str[i] == c)
+			return ((char *)&str[i]);
 		i++;
-	if (c == str[i])
+	}
+	if (c == '\0')
 		return ((char *)&str[i]);
 	return (0);
 }

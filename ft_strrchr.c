@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:50:12 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 13:06:02 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:51:13 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(char *str, int c)
 	{
 		if (c == str[l])
 			return ((char *)str);
-		str--;
+		l--;
 	}
 	return (0);
 }

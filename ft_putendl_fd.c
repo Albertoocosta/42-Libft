@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:39 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/19 17:06:00 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:18:35 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
-	while (s)
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;

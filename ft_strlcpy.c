@@ -6,13 +6,13 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:32:26 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/16 13:05:22 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:47:03 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *src, char *dst, size_t lendst)
+size_t	ft_strlcpy(char *dst, const char *src, size_t lendst)
 {
 	size_t	lensrc;
 	size_t	i;
