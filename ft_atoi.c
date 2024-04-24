@@ -21,15 +21,11 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while (*str < 33)
 		str++;
-	while (*str == 43 || *str == 45)
+	if (*str == 43 || *str == 45)
 	{
-		if (*str == 43)
-			str++;
 		if (*str == 45)
-		{
 			i *= -1;
-			str++;
-		}
+		str++;
 	}
 	while ((*str >= 48) && (*str <= 57))
 	{

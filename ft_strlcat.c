@@ -32,11 +32,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[h] = '\0';
 	return (start + ft_strlen(src));
 }
-#include <stdio.h>
-int	main ()
-{
-	char dest[] = "pqrs";
-	char src[] = "abcdefghi";
-	printf("%zu\n", ft_strlcat(dest, src, 10));
-
-}
