@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:45:13 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/23 18:51:20 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:50:29 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,12 @@ char	**ft_split(char	*str, char c)
 	}
 	list[i] = 0;
 	return (list);
+}
+
+#include <stdio.h>
+
+int main ()
+{
+	char str[] = "i   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+	printf("%zu\n", i_words(str, ' '));
 }

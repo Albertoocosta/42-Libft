@@ -6,7 +6,7 @@
 /*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:22:10 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/23 17:56:07 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:54:14 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_atoi(const char *str)
 
 	i = 1;
 	result = 0;
-	while (*str < 33)
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r')
 		str++;
 	if (*str == 43 || *str == 45)
 	{
@@ -27,10 +28,13 @@ int	ft_atoi(const char *str)
 			i *= -1;
 		str++;
 	}
-	while ((*str >= 48) && (*str <= 57))
+	if (*str > 47)
 	{
-		result = (result * 10) + (*str - '0');
-		str++;
+		while ((*str >= 48) && (*str <= 57))
+		{
+			result = (result * 10) + (*str - '0');
+			str++;
+		}
 	}
 	return (i * result);
 }
