@@ -35,20 +35,20 @@ char	*ft_itoa(int n)
 	int		i;
 
 	i = len(n);
-	if (n == 0)
-		return (0);
 	result = (char *)malloc(sizeof(char) * (i + 1));
 	if (!result)
 		return (0);
+	if (n == 0)
+		result[0] = '0';
 	result[i] = '\0';
 	if (n < 0)
-	{
 		result[0] = '-';
-		n *= -1;
-	}
 	while (n)
 	{
-		result[i - 1] = (n % 10) + '0';
+		if (result[0] == '-')
+			result[i - 1] = -(n % 10) + 48;
+		else
+			result[i - 1] = (n % 10) + 48;
 		n /= 10;
 		i--;
 	}
