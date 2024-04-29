@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:45:13 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/25 18:50:29 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:59:36 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_split(char	*str, char c)
 	i = 0;
 	list = (char **)malloc(sizeof(char *) * i_words(str, c) + 1);
 	if (str == 0 || c == 0 || !list)
-		return (NULL);
+		return (0);
 	while (i < i_words(str, c))
 	{
 		while (str[x] == c)
@@ -61,7 +61,6 @@ char	**ft_split(char	*str, char c)
 		y = x;
 		while (str[y] != c && str[y])
 			y++;
-		list[i] = (char *)malloc(sizeof(char) * (y - x) + 1);
 		list[i] = ft_substr(str, x, (y - x));
 		x = y;
 		i++;
@@ -69,19 +68,3 @@ char	**ft_split(char	*str, char c)
 	list[i] = '\0';
 	return (list);
 }
-/* #include <stdio.h>
-#include <string.h>
-
-int main ()
-{
-	char str[] = "split  ||this|for|me|||||!|";
-	char **result = ft_split(str, '|');
-	int	i = 0;
-	while (result[i] != 0)
-	{
-		printf("%s\n", result[i]);
-		i++;
-	}
-	if (result[5000] != NULL)
-		printf("null\n");
-} */

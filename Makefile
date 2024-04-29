@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cda-fons <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/23 17:36:04 by cda-fons          #+#    #+#              #
-#    Updated: 2024/04/23 17:53:21 by cda-fons         ###   ########.fr        #
+#    Updated: 2024/04/27 17:53:20 by cda-fons         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,22 +20,23 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
     ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
     ft_substr.c ft_tolower.c ft_toupper.c ft_putstr_fd.c ft_putendl_fd.c \
     ft_putnbr_fd.c
+BONUS_SRCS = ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c ft_lstadd_back.c 
 NAME = libft.a
 LIBC = ar rcs
 RM = rm -f
 OBJS = $(SRCS:.c=.o)
-
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 ${NAME}: ${OBJS}
 	${LIBC}	${NAME}	${OBJS}
-
 %.o: %.c
 	${CC}	${CFLAGS} -c $< -o $@
-
-all: ${NAME}
-
+all:	${NAME}
+bonus:	${NAME}	${BONUS_OBJS}
+	${LIBC}	${NAME}	${BONUS_OBJS}
 clean:
-	${RM} ${OBJS}
+	${RM}	${OBJS}	${BONUS_OBJS}
 fclean: clean
 	${RM}	${NAME}
 re: fclean all
-.PHONY : all clean fclean re
+rebonus: fclean bonus
+.PHONY : all clean fclean re bonus rebonus

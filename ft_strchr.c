@@ -6,7 +6,7 @@
 /*   By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:01:30 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/26 19:59:56 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:21:39 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,11 @@ char	*ft_strchr(const char *str, int c)
 	int	i;
 
 	i = 0;
-	if (c > 126)
-		return (0);
-	while (str[i])
+	while (str[i] != (char)c)
 	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
+		if (!str[i])
+			return (0);
 		i++;
 	}
-	if (str[i] == c)
-		return ((char *)&str[i]);
-	return (0);
-} 
-/* #include <stdio.h>
-int main()
-{
-	//char s[] = "teste";
-	printf("%p\n", ft_strchr(0x5617b198f020: "teste", 357: 'e'));
-} */
+	return ((char *)&str[i]);
+}
