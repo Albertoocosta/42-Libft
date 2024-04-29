@@ -6,7 +6,7 @@
 /*   By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:45:13 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/27 17:59:36 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:42:46 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,54 +17,60 @@ size_t	i_words(char *str, char c)
 {
 	int	i;
 	int	words;
-	int	flag;
 
 	i = 0;
 	words = 0;
-	flag = 1;
-	if (!str)
-		return (words);
 	while (str[i])
 	{
-		while (str[i] == c)
-		{
+		if (str[i] == c)
 			i++;
-			flag = 1;
-		}
-		if (str[i] != c && flag == 1 && str[i])
+		else
 		{
-			words++;
-			flag = 0;
+			words ++;
+			while (str[i] && str[i] != c)
+			{
+				i ++;
+			}
 		}
-		i++;
 	}
 	return (words);
 }
 
+static void	memfree(char **list, int count)
+{
+	while (count >= 0)
+	{
+		free(list[count]);
+		count--;
+	}
+	free(list);
+}
+
 char	**ft_split(char	*str, char c)
 {
-	size_t	x;
-	size_t	y;
-	size_t	i;
-	char	**list;
-
-	x = 0;
-	y = 0;
-	i = 0;
-	list = (char **)malloc(sizeof(char *) * i_words(str, c) + 1);
-	if (str == 0 || c == 0 || !list)
+	auto size_t x = 0, y = 0;
+	auto int i = 0, size = 0;
+	size = i_words(str, c);
+	auto char **list = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!list)
 		return (0);
-	while (i < i_words(str, c))
+	while (i < size)
 	{
 		while (str[x] == c)
 			x++;
 		y = x;
 		while (str[y] != c && str[y])
 			y++;
-		list[i] = ft_substr(str, x, (y - x));
+		list[i] = malloc(sizeof(char) * ((y - x) + 1));
+		if (!list[i])
+		{
+			memfree(list, i);
+			return (0);
+		}
+		ft_strlcpy(list[i], &str[x], ((y - x) + 1));
 		x = y;
 		i++;
 	}
-	list[i] = '\0';
+	list[size] = 0;
 	return (list);
 }
