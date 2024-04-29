@@ -6,7 +6,7 @@
 /*   By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:34:59 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/27 17:44:03 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:32:01 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	ft_lstsize(t_list *lst)
 	size_t	i;
 
 	i = 0;
-	while ((lst->next) != NULL)
+	while (lst)
+	{
+		lst = lst->next;
 		i++;
+	}
 	return (i);
 }
