@@ -6,11 +6,12 @@
 /*   By: cda-fons <cda-fons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:45:13 by cda-fons          #+#    #+#             */
-/*   Updated: 2024/04/30 12:40:32 by cda-fons         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:22:53 by cda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 size_t	i_words(char *str, char c)
 {
@@ -25,10 +26,10 @@ size_t	i_words(char *str, char c)
 			i++;
 		else
 		{
-			words ++;
+			words++;
 			while (str[i] && str[i] != c)
 			{
-				i ++;
+				i++;
 			}
 		}
 	}
@@ -45,15 +46,16 @@ static void	memfree(char **list, int count)
 	free(list);
 }
 
-char	**ft_split(char	*str, char c)
+char	**fill(char *str, char c, char **list, size_t size)
 {
-	auto size_t x = 0, y = 0;
-	auto int i = 0, size = 0;
-	size = i_words(str, c);
-	auto char **list = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!list)
-		return (0);
-	while (i < size)
+	size_t	i;
+	int		x;
+	int		y;
+
+	x = 0;
+	y = 0;
+	i = -1;
+	while (++i < size)
 	{
 		while (str[x] == c)
 			x++;
@@ -68,8 +70,20 @@ char	**ft_split(char	*str, char c)
 		}
 		ft_strlcpy(list[i], &str[x], ((y - x) + 1));
 		x = y;
-		i++;
 	}
 	list[size] = 0;
+	return (list);
+}
+
+char	**ft_split(char	*str, char c)
+{
+	char	**list;
+	size_t	size;
+
+	size = i_words(str, c);
+	list = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!list)
+		return (0);
+	list = fill(str, c, list, size);
 	return (list);
 }
